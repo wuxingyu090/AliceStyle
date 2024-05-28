@@ -302,12 +302,12 @@ if(!norunFlag){
 					"userid":userid_
 				},
 				success: function(res) {
-					if(res.code !== 100000){
+					if(res.intent.code !== 0){
 						talkValTimer();
 						showMessage('似乎有什么错误，请和站长联系！',0);
 					}else{
 						talkValTimer();
-						showMessage(res.text,0);
+						showMessage(res.results[0].values.text,0);
 					}
 					console.log(res);
 					$('#AIuserText').val("");
